@@ -1,0 +1,135 @@
+/* General styles for the cyber-dashboard */
+#cyber-dashboard {
+    background-color: #1a1a2e; /* Dark background */
+    color: #f8f8f2; /* Light text color */
+    font-family: 'Courier New', Courier, monospace; /* Monospace for terminal feel */
+    overflow: hidden; /* Hide overflow for animations */
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+/* Pulsating activity indicator */
+.activity-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #50fa7b; /* Green indicator */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.7;
+    }
+}
+
+/* Typing effect in terminal */
+.typing-effect {
+    display: inline-block;
+    border-right: 2px solid #ff79c6; /* Cursor color */
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #ff79c6; }
+}
+
+/* Data packet animation */
+.data-packet {
+    width: 15px;
+    height: 15px;
+    background-color: #ff5555; /* Red packets */
+    position: absolute;
+    border-radius: 50%;
+    animation: move-packet 3s infinite ease-in-out;
+}
+
+@keyframes move-packet {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(calc(100vw - 15px), calc(100vh - 15px)); /* Move diagonally */
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Network visualization */
+.network {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.node {
+    width: 10px;
+    height: 10px;
+    background-color: #6272a4; /* Node color */
+    border-radius: 50%;
+    position: absolute;
+    animation: node-move 5s infinite;
+}
+
+@keyframes node-move {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(calc(50vw - 5px), calc(30vh - 5px));
+    }
+    50% {
+        transform: translate(calc(30vw - 5px), calc(70vh - 5px));
+    }
+    75% {
+        transform: translate(calc(70vw - 5px), calc(50vh - 5px));
+    }
+}
+
+/* Connecting lines for network visualization */
+.line {
+    position: absolute;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    animation: line-draw 5s infinite ease-in-out;
+}
+
+@keyframes line-draw {
+    0%, 100% {
+        height: 0;
+    }
+    50% {
+        height: 100px; /* Dynamic height */
+    }
+}
+
+/* Abstract background animation */
+@keyframes background-animation {
+    0% { background-color: #1a1a2e; }
+    50% { background-color: #0f0f1a; }
+    100% { background-color: #1a1a2e; }
+}
+
+body {
+    animation: background-animation 10s infinite;
+}
