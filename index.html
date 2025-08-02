@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSINT Cyber Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="cyber-dashboard">
+        <header>
+            <h1>OSINT Cyber Dashboard</h1>
+            <p>Your gateway to open source intelligence.</p>
+        </header>
+        
+        <section class="terminal-section">
+            <h2>Simulated Terminal</h2>
+            <div class="terminal">
+                <pre>user@osint:~$ <span class="command">fetch_data</span></pre>
+                <div class="output">
+                    <p>Fetching data...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="visualization-section">
+            <h2>Dynamic Data Visualizations</h2>
+            <div class="chart">
+                <div class="bar" style="height: 75%; animation: growBar 2s;"></div>
+                <div class="bar" style="height: 50%; animation: growBar 2s 0.5s;"></div>
+                <div class="bar" style="height: 90%; animation: growBar 2s 1s;"></div>
+            </div>
+        </section>
+
+        <section class="network-map-section">
+            <h2>Network Map</h2>
+            <div class="network-map">
+                <div class="node" style="top: 20%; left: 30%; animation: pulse 2s infinite;"></div>
+                <div class="node" style="top: 60%; left: 70%; animation: pulse 2s infinite;"></div>
+                <div class="node" style="top: 40%; left: 50%; animation: pulse 2s infinite;"></div>
+            </div>
+        </section>
+
+        <section class="encryption-section">
+            <h2>Encryption/Decryption Effects</h2>
+            <div class="encryption-demo">
+                <div class="text">Secret Message: <span class="encrypted">[ENCRYPTED]</span></div>
+                <button class="decrypt-btn">Decrypt</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+```
